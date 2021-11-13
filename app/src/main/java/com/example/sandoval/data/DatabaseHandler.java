@@ -1,11 +1,13 @@
 package com.example.sandoval.data;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 import com.example.sandoval.R;
+import com.example.sandoval.model.Product;
 import com.example.sandoval.util.Util;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
@@ -35,8 +37,20 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         //CRUD
 
         //Create
+        public  void addProduct (Product product) {
+            SQLiteDatabase db = this.getWritableDatabase();
 
-        //Retrieve
+            ContentValues values = new ContentValues();
+
+            values.put(Util.KEY_NAME,product.getName());
+            values.put(Util.KEY_PRICE, product.getPrice());
+            values.put(Util.KEY_QUANTITY, product.getQuantity());
+
+            db.insert(Util.TABLE_NAME, null, values);
+            db.close();
+        }
+
+    //Retrieve
 
         //Update
 

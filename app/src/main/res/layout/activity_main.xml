@@ -8,6 +8,13 @@
     tools:context=".MainActivity">
 
 
+    <TextView
+        android:id="@+id/copyrightTxt6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="© Sandoval_M 2021"
+        android:textColor="@color/white" />
+
     <Button
         android:id="@+id/enterBtn"
         android:layout_width="109dp"
@@ -22,19 +29,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.391" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="399dp"
-        android:layout_height="224dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtViewWelcome"
-        app:layout_constraintVertical_bias="0.213"
-        tools:srcCompat="@drawable/logo" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
         android:id="@+id/txtViewWelcome"
@@ -78,14 +73,14 @@
 
     <TextView
         android:id="@+id/mmTxt"
-        android:layout_width="122dp"
-        android:layout_height="29dp"
+        android:layout_width="135dp"
+        android:layout_height="43dp"
         android:fontFamily="@font/dalgona"
-        android:text="MiniMart"
         android:shadowColor="@color/darkred"
         android:shadowDx="5"
         android:shadowDy="-5"
         android:shadowRadius="5"
+        android:text="MiniMart"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="24sp"
@@ -101,7 +96,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="© Sandoval_M 2021"
-        tools:layout_editor_absoluteX="142dp"
-        tools:layout_editor_absoluteY="686dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterBtn"
+        app:layout_constraintVertical_bias="0.613" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="286dp"
+        android:layout_height="216dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtViewWelcome"
+        app:layout_constraintVertical_bias="0.229"
+        app:srcCompat="@drawable/logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

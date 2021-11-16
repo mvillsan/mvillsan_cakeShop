@@ -34,8 +34,8 @@
 
     <TextView
         android:id="@+id/mmTxt2"
-        android:layout_width="122dp"
-        android:layout_height="29dp"
+        android:layout_width="125dp"
+        android:layout_height="37dp"
         android:fontFamily="@font/dalgona"
         android:shadowColor="@color/darkred"
         android:shadowDx="5"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg3"
-    tools:context=".addProducts">
+    tools:context=".AddProducts">
 
     <TextView
         android:id="@+id/copyrightTxt3"
@@ -59,8 +59,8 @@
 
     <TextView
         android:id="@+id/mmTxt3"
-        android:layout_width="122dp"
-        android:layout_height="29dp"
+        android:layout_width="125dp"
+        android:layout_height="34dp"
         android:fontFamily="@font/dalgona"
         android:shadowColor="@color/darkred"
         android:shadowDx="5"
@@ -121,14 +121,14 @@
         app:layout_constraintHorizontal_bias="0.091"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/quantityTxt"
-        app:layout_constraintVertical_bias="0.169" />
+        app:layout_constraintVertical_bias="0.143" />
 
     <EditText
         android:id="@+id/prodNameTxt"
         android:layout_width="269dp"
         android:layout_height="48dp"
         android:ems="10"
-        android:hint="Product Name"
+        android:hint="Enter Product Name"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -139,30 +139,30 @@
 
     <EditText
         android:id="@+id/priceTxt"
-        android:layout_width="269dp"
-        android:layout_height="48dp"
+        android:layout_width="274dp"
+        android:layout_height="50dp"
         android:ems="10"
-        android:hint="Price"
-        android:inputType="textPersonName"
+        android:hint="Enter Price"
+        android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.169"
+        app:layout_constraintHorizontal_bias="0.175"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/prodNameTxt"
-        app:layout_constraintVertical_bias="0.087" />
+        app:layout_constraintVertical_bias="0.066" />
 
     <EditText
         android:id="@+id/quantityTxt"
-        android:layout_width="269dp"
-        android:layout_height="48dp"
+        android:layout_width="276dp"
+        android:layout_height="57dp"
         android:ems="10"
-        android:hint="Quantity"
-        android:inputType="textPersonName"
+        android:hint="Enter Quantity"
+        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.169"
+        app:layout_constraintHorizontal_bias="0.177"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/priceTxt"
-        app:layout_constraintVertical_bias="0.107" />
+        app:layout_constraintVertical_bias="0.067" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

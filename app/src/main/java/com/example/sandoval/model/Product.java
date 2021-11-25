@@ -3,7 +3,7 @@ package com.example.sandoval.model;
 public class Product {
     private int id;
     private String name;
-    private long price;
+    private double price;
     private int quantity;
 
     public Product() {
@@ -32,11 +32,11 @@ public class Product {
         this.name = name;
     }
 
-    public long getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(long price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 

@@ -18,8 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        homeBtn = findViewById(R.id.homeBtn);
-        enterBtn = findViewById(R.id.enterBtn);
+        refs();
 
         homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,6 +33,11 @@ public class MainActivity extends AppCompatActivity {
                 enterHomeProducts();
             }
         });
+    }
+
+    public void refs(){
+        homeBtn = findViewById(R.id.homeBtn);
+        enterBtn = findViewById(R.id.enterBtn);
     }
 
     public void home(){

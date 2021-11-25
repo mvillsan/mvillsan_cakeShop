@@ -16,7 +16,7 @@
         android:drawableRight="@drawable/search"
         android:fontFamily="@font/lemon"
         android:text="Search Product"
-        android:textAlignment="textEnd"
+        android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@color/lightgreen"
         app:layout_constraintBottom_toBottomOf="parent"

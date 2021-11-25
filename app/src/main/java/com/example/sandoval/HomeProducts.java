@@ -16,10 +16,7 @@ public class HomeProducts extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_products);
 
-        homeBtn = findViewById(R.id.homeBtn2);
-        addProds = findViewById(R.id.addBtn);
-        searchByIdProds = findViewById(R.id.searchByIdBtn);
-        viewAllProds = findViewById(R.id.viewAllBtn);
+        refs();
 
         homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +47,12 @@ public class HomeProducts extends AppCompatActivity {
         });
     }
 
+    public void refs(){
+        homeBtn = findViewById(R.id.homeBtn2);
+        addProds = findViewById(R.id.addBtn);
+        searchByIdProds = findViewById(R.id.searchByIdBtn);
+        viewAllProds = findViewById(R.id.viewAllBtn);
+    }
     public void home(){
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);

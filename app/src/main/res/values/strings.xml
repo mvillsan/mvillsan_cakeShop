@@ -2,12 +2,27 @@
     <string name="app_name">mini_mart</string>
     <string name="drop_table">DROP TABLE IF EXIST</string>
     <string name="title_activity_add_products">addProducts</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_welcome">Welcome to</string>
+    <string name="title_minimart">MiniMart</string>
+    <string name="title_enterBtn">Enter</string>
+    <string name="title_addbtn">Add a Product</string>
+    <string name="title_searchProdIDbtn">Search Product by ID</string>
+    <string name="title_viewAllbtn">View All Products</string>
+    <string name="title_updatebtn">Update a Product</string>
+    <string name="title_deletebtn">Delete a Product</string>
+    <string name="title_credits">© Sandoval_M 2021</string>
+    <string name="title_enterProdName">Enter Product Name</string>
+    <string name="title_enterProdPrice">Enter Price</string>
+    <string name="title_enterProdQuantity">Enter Quantity</string>
+    <string name="title_enterProdID">Enter Product ID</string>
+    <string name="title_searchProd">Search Product</string>
+    <string name="title_ProdName">Product Name</string>
+    <string name="title_ProdPrice">Product Price</string>
+    <string name="title_ProdQuantity">Product Quantity</string>
+    <string name="title_mmlogo">mmlogo</string>
+    <string name="title_bar">homebar</string>
+    <string name="title_homelogo">homelogo</string>
+    <string name="title_listofProds">List of Products</string>
+    <string name="title_update">Update</string>
+    <string name="title_delete">Delete</string>
 </resources>

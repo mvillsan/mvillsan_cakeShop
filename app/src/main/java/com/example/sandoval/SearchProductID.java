@@ -4,18 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.example.sandoval.data.DatabaseHandler;
-import com.example.sandoval.model.Product;
-
-import java.util.List;
 
 public class SearchProductID extends AppCompatActivity {
 
@@ -38,21 +32,21 @@ public class SearchProductID extends AppCompatActivity {
             }
         });
 
-        cmdSearchByID.setOnClickListener(searchProdByID);
+        //cmdSearchByID.setOnClickListener(searchProdByID);
     }
     public void refs(){
         homeBtn = findViewById(R.id.homeBtn4);
-        cmdSearchByID = findViewById(R.id.searchProdBtn);
-        prodID = findViewById(R.id.prodIDTxt);
-        prodName = findViewById(R.id.searchProdNameTxt);
-        prodPrice = findViewById(R.id.searchProdPriceTxt);
-        prodQuantity = findViewById(R.id.searchProdQuantityTxt);
+        cmdSearchByID = findViewById(R.id.searchProdBtnSS);
+        prodID = findViewById(R.id.prodIDEditTxtSS);
+        prodName = findViewById(R.id.prodNameTxtSS);
+        prodPrice = findViewById(R.id.prodPriceTxtSS);
+        prodQuantity = findViewById(R.id.prodQuantTxtSS);
     }
     public void home(){
         Intent intent = new Intent(this, HomeProducts.class);
         startActivity(intent);
     }
-
+/*
     View.OnClickListener searchProdByID = new View.OnClickListener() {
 
         String productID = prodID.getText().toString();
@@ -63,7 +57,7 @@ public class SearchProductID extends AppCompatActivity {
             if(productID.isEmpty()) {
                 Toast.makeText(getApplicationContext(), "PLEASE INPUT A PRODUCT ID!", Toast.LENGTH_SHORT).show();
             }
-            /*else{
+            else{
                 DatabaseHandler db = new DatabaseHandler(AddProducts.this);
                 if(db.getProduct(pID))
                 Product product = new Product();
@@ -84,7 +78,7 @@ public class SearchProductID extends AppCompatActivity {
                 prodName.setText("");
                 prodPrice.setText("");
                 prodQuantity.setText("");
-            }*/
+            }
         }
-    };
+    };*/
 }

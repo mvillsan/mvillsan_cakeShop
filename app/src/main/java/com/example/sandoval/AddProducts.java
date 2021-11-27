@@ -42,9 +42,9 @@ public class AddProducts extends AppCompatActivity {
     public void refs(){
         homeBtn = findViewById(R.id.homeBtn3);
         cmdAddProduct = findViewById(R.id.addProdBtn);
-        prodName = findViewById(R.id.prodNameTxt);
-        prodPrice = findViewById(R.id.priceTxt);
-        prodQuantity = findViewById(R.id.quantityTxt);
+        prodName = findViewById(R.id.prodNameEditTxtAS);
+        prodPrice = findViewById(R.id.priceEditTxtAS);
+        prodQuantity = findViewById(R.id.quantityEditTxtAS);
     }
     public void home(){
         Intent intent = new Intent(getApplicationContext(), HomeProducts.class);

@@ -9,16 +9,16 @@
 
     <TextView
         android:id="@+id/listOfProdsTxt"
-        android:layout_width="242dp"
-        android:layout_height="88dp"
-        android:fontFamily="@font/theboldfont"
-        android:text="List of Products"
-        android:textAlignment="textStart"
+        android:layout_width="155dp"
+        android:layout_height="86dp"
+        android:fontFamily="@font/bowlby_one"
+        android:text="@string/title_listofProds"
+        android:textAlignment="center"
         android:textColor="@color/darkred"
-        android:textSize="30sp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageView12"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.905"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView11"
         app:layout_constraintVertical_bias="0.03" />
@@ -28,6 +28,7 @@
         android:layout_width="151dp"
         android:layout_height="148dp"
         android:layout_marginBottom="324dp"
+        android:contentDescription="@string/title_mmlogo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -40,6 +41,7 @@
         android:id="@+id/imageView11"
         android:layout_width="493dp"
         android:layout_height="60dp"
+        android:contentDescription="@string/title_bar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.743"
@@ -59,7 +61,7 @@
         android:shadowDx="5"
         android:shadowDy="-5"
         android:shadowRadius="5"
-        android:text="MiniMart"
+        android:text="@string/title_minimart"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="24sp"
@@ -81,6 +83,7 @@
         android:layout_width="34dp"
         android:layout_height="35dp"
         android:layout_marginTop="16dp"
+        android:contentDescription="@string/title_homelogo"
         app:layout_constraintBottom_toBottomOf="@+id/imageView8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.042"
@@ -88,5 +91,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/home_icon" />
+
+    <ImageView
+        android:id="@+id/imageView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/listOfProdsTxt"
+        app:layout_constraintHorizontal_bias="0.615"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView11"
+        app:layout_constraintVertical_bias="0.029"
+        app:srcCompat="@drawable/allproducts_icon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

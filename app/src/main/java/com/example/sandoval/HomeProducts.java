@@ -9,7 +9,7 @@ import android.widget.ImageButton;
 
 public class HomeProducts extends AppCompatActivity {
 
-    ImageButton homeBtn,addProds,searchByIdProds, viewAllProds;
+    ImageButton homeBtn,addProds,searchByIdProds, viewAllProds,updateProds, deleteProds;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +45,20 @@ public class HomeProducts extends AppCompatActivity {
                 viewAllProd();
             }
         });
+
+        updateProds.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                updateProd();
+            }
+        });
+
+        deleteProds.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deleteProd();
+            }
+        });
     }
 
     public void refs(){
@@ -52,6 +66,8 @@ public class HomeProducts extends AppCompatActivity {
         addProds = findViewById(R.id.addBtn);
         searchByIdProds = findViewById(R.id.searchByIdBtn);
         viewAllProds = findViewById(R.id.viewAllBtn);
+        updateProds = findViewById(R.id.updateBtn);
+        deleteProds = findViewById(R.id.deleteBtn);
     }
     public void home(){
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
@@ -70,6 +86,16 @@ public class HomeProducts extends AppCompatActivity {
 
     public void viewAllProd(){
         Intent intent = new Intent(getApplicationContext(), ViewAllProducts.class);
+        startActivity(intent);
+    }
+
+    public void updateProd(){
+        Intent intent = new Intent(getApplicationContext(), UpdateProducts.class);
+        startActivity(intent);
+    }
+
+    public void deleteProd(){
+        Intent intent = new Intent(getApplicationContext(), DeleteProducts.class);
         startActivity(intent);
     }
 }

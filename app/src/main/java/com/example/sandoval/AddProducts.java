@@ -55,13 +55,25 @@ public class AddProducts extends AppCompatActivity {
         @Override
         public void onClick(View view) {
             String productName = prodName.getText().toString();
+            String productPrice = prodPrice.getText().toString();
+            String productQuantity = prodQuantity.getText().toString();
 
             if(productName.isEmpty()) {
                 Toast.makeText(getApplicationContext(), "PLEASE INPUT A PRODUCT NAME!", Toast.LENGTH_SHORT).show();
             }
+
             else if(!productName.matches("[A-Za-z]+")){
                 Toast.makeText(getApplicationContext(), "INVALID PRODUCT NAME!", Toast.LENGTH_SHORT).show();
             }
+
+            else if(productPrice.isEmpty()){
+                Toast.makeText(getApplicationContext(), "PLEASE INPUT PRODUCT PRICE!", Toast.LENGTH_SHORT).show();
+            }
+
+            else if(productQuantity.isEmpty()){
+                Toast.makeText(getApplicationContext(), "PLEASE INPUT PRODUCT QUANTITY!", Toast.LENGTH_SHORT).show();
+            }
+
             else{
                 Product product = new Product();
                 product.setName(prodName.getText().toString());

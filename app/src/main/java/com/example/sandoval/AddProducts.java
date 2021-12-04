@@ -58,23 +58,23 @@ public class AddProducts extends AppCompatActivity {
             String productPrice = prodPrice.getText().toString();
             String productQuantity = prodQuantity.getText().toString();
 
-            if(productName.isEmpty()) {
-                Toast.makeText(getApplicationContext(), "PLEASE INPUT A PRODUCT NAME!", Toast.LENGTH_SHORT).show();
-            }
-
-            else if(!productName.matches("[A-Za-z]+")){
+            if(productName.isEmpty() && productPrice.isEmpty() && productQuantity.isEmpty()){
+                Toast.makeText(getApplicationContext(), "PLEASE INPUT ALL FIELDS!", Toast.LENGTH_SHORT).show();
+            }else if(!productName.matches("[a-zA-Z][a-zA-Z ]*+")){
                 Toast.makeText(getApplicationContext(), "INVALID PRODUCT NAME!", Toast.LENGTH_SHORT).show();
-            }
-
-            else if(productPrice.isEmpty()){
+            }else if(productName.isEmpty() && productPrice.isEmpty()){
+                Toast.makeText(getApplicationContext(), "PLEASE INPUT PRODUCT NAME && PRODUCT PRICE!", Toast.LENGTH_SHORT).show();
+            }else if(productName.isEmpty() && productQuantity.isEmpty()){
+                Toast.makeText(getApplicationContext(), "PLEASE INPUT PRODUCT NAME && PRODUCT QUANTITY!", Toast.LENGTH_SHORT).show();
+            }else if(productPrice.isEmpty() && productQuantity.isEmpty()){
+                Toast.makeText(getApplicationContext(), "PLEASE INPUT PRODUCT PRICE && PRODUCT QUANTITY!", Toast.LENGTH_SHORT).show();
+            } else if(productName.isEmpty()) {
+                Toast.makeText(getApplicationContext(), "PLEASE INPUT A PRODUCT NAME!", Toast.LENGTH_SHORT).show();
+            }  else if(productPrice.isEmpty()){
                 Toast.makeText(getApplicationContext(), "PLEASE INPUT PRODUCT PRICE!", Toast.LENGTH_SHORT).show();
-            }
-
-            else if(productQuantity.isEmpty()){
+            } else if(productQuantity.isEmpty()){
                 Toast.makeText(getApplicationContext(), "PLEASE INPUT PRODUCT QUANTITY!", Toast.LENGTH_SHORT).show();
-            }
-
-            else{
+            } else{
                 Product product = new Product();
                 product.setName(prodName.getText().toString());
                 product.setPrice(Double.parseDouble(prodPrice.getText().toString()));

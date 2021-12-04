@@ -72,13 +72,17 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 cursor.moveToFirst();
             }
 
-            Product product = new Product();
-            product.setId(cursor.getInt(0));
-            product.setName(cursor.getString(1));
-            product.setPrice(cursor.getLong(2));
-            product.setQuantity(cursor.getInt(3));
-
-            return product;
+            if(cursor.getCount() != 0)
+            {
+                Product product = new Product();
+                product.setId(cursor.getInt(0));
+                product.setName(cursor.getString(1));
+                product.setPrice(cursor.getLong(2));
+                product.setQuantity(cursor.getInt(3));
+                return product;
+            } else{
+                return null;
+            }
         }
 
         //Retrieve all products
@@ -106,7 +110,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             }
 
             return productList;
-
         }
 
         //Update

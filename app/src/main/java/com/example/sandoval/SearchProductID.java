@@ -63,7 +63,6 @@ public class SearchProductID extends AppCompatActivity {
     }
 
     public void searchProdByID(){
-        //Converting String prodID to Integer type
         String productID = prodID.getText().toString();
 
         if(productID.isEmpty()) {
@@ -83,7 +82,6 @@ public class SearchProductID extends AppCompatActivity {
                 Log.d("SearchProductID", "On Create: " + product.getName() + ", " + product.getId());
             }
 
-            //Product product = db.getProduct(Integer.parseInt(productID));
             Product product;
             product = db.getProduct(Integer.parseInt(productID));
             //Check whether the Product ID exists

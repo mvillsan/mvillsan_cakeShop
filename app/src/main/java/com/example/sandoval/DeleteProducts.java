@@ -123,15 +123,11 @@ public class DeleteProducts extends AppCompatActivity {
             //Check whether the product name, price and quantity edit texts are empty or not.
             if(prodName.getText().toString().isEmpty()){
                 Toast.makeText(getApplicationContext(), "Search Product ID First!", Toast.LENGTH_SHORT).show();
-            }
-            else if(prodPrice.getText().toString().isEmpty()){
+            }else if(prodPrice.getText().toString().isEmpty()){
                 Toast.makeText(getApplicationContext(), "Search Product ID First!", Toast.LENGTH_SHORT).show();
-            }
-
-            else if(prodQuant.getText().toString().isEmpty()){
+            }else if(prodQuant.getText().toString().isEmpty()){
                 Toast.makeText(getApplicationContext(), "Search Product ID First!", Toast.LENGTH_SHORT).show();
-            }
-            else{
+            }else{
                 //Getting product items from the database
                 DatabaseHandler db = new DatabaseHandler(DeleteProducts.this);
 

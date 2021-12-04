@@ -70,6 +70,7 @@ public class UpdateProducts extends AppCompatActivity {
     public void searchProdByID(){
         String productID = prodID.getText().toString();
 
+        //Check whether the product ID edit text is empty or not
         if(productID.isEmpty()) {
             Toast.makeText(getApplicationContext(), "Please Input PRODUCT ID!", Toast.LENGTH_SHORT).show();
             prodName.setText("");
@@ -87,17 +88,17 @@ public class UpdateProducts extends AppCompatActivity {
                 Log.d("UpdateProductID", "On Create: " + product.getName() + ", " + product.getId());
             }
 
-            //Product product = db.getProduct(Integer.parseInt(productID));
             Product product;
             product = db.getProduct(Integer.parseInt(productID));
+
             //Check whether the Product ID exists
             if(product != null) {
                 Toast.makeText(getApplicationContext(),"Product ID EXISTS.", Toast.LENGTH_SHORT).show();
                 double productPrice = product.getPrice();
                 int productQuantity = product.getQuantity();
                 prodName.setText(product.getName());
-                prodPrice.setText(" " +productPrice);
-                prodQuant.setText(" " + productQuantity);
+                prodPrice.setText(productPrice + " ");
+                prodQuant.setText(productQuantity + " ");
             } else {
                 Toast.makeText(getApplicationContext(),"Product ID DOES NOT EXISTS.", Toast.LENGTH_SHORT).show();
                 prodID.setText("");
@@ -111,35 +112,38 @@ public class UpdateProducts extends AppCompatActivity {
     public void updateProductByID(){
         String productID = prodID.getText().toString();
 
+        //Check whether the product ID edit text is empty or not
         if(productID.isEmpty()) {
             Toast.makeText(getApplicationContext(), "Please Input PRODUCT ID!", Toast.LENGTH_SHORT).show();
             prodName.setText("");
             prodPrice.setText("");
             prodQuant.setText("");
         }else {
-            //Getting product items from the database
-            DatabaseHandler db = new DatabaseHandler(UpdateProducts.this);
-
-            db.getAllProducts();
-
-            List<Product> productList = db.getAllProducts();
-
-            for (Product product : productList) {
-                Log.d("UpdateProductID", "On Create: " + product.getName() + ", " + product.getId());
-            }
-
-            Product product;
-            product = db.getProduct(Integer.parseInt(productID));
-            //Check whether the product name, price and quantity edit text are not empty.
-            if (product != null) {
-                db.updateProduct(product);
-                Toast.makeText(getApplicationContext(), product.getId() + "Product Succesfully UPDATED !", Toast.LENGTH_SHORT).show();
-                prodID.setText("");
-                prodName.setText("");
-                prodPrice.setText("");
-                prodQuant.setText("");
+            //Check whether the product name, price and quantity edit texts are empty or not.
+            if (prodName.getText().toString().isEmpty()) {
+                Toast.makeText(getApplicationContext(), "Search Product ID First!", Toast.LENGTH_SHORT).show();
+            } else if (prodPrice.getText().toString().isEmpty()) {
+                Toast.makeText(getApplicationContext(), "Search Product ID First!", Toast.LENGTH_SHORT).show();
+            } else if (prodQuant.getText().toString().isEmpty()) {
+                Toast.makeText(getApplicationContext(), "Search Product ID First!", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(getApplicationContext(), "Product ID DOES NOT EXISTS.", Toast.LENGTH_SHORT).show();
+                //Getting product items from the database
+                DatabaseHandler db = new DatabaseHandler(UpdateProducts.this);
+
+                db.getAllProducts();
+
+                List<Product> productList = db.getAllProducts();
+
+                for (Product product : productList) {
+                    Log.d("UpdateProductID", "On Create: " + product.getName() + ", " + product.getId());
+                }
+
+                Product product;
+                product = db.getProduct(Integer.parseInt(productID));
+                if (product != null) {
+                    db.updateProduct(product);
+                    Toast.makeText(getApplicationContext(), "Product # " + product.getId() + " Succesfully UPDATED !", Toast.LENGTH_SHORT).show();
+                }
                 prodID.setText("");
                 prodName.setText("");
                 prodPrice.setText("");

@@ -75,8 +75,10 @@
         android:id="@+id/listViewProds"
         android:layout_width="409dp"
         android:layout_height="503dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="226dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listOfProdsTxt" />
 
     <ImageButton
         android:id="@+id/homeBtn5"
@@ -84,7 +86,7 @@
         android:layout_height="35dp"
         android:layout_marginTop="16dp"
         android:contentDescription="@string/title_homelogo"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView8"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView11"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.042"
         app:layout_constraintStart_toStartOf="parent"

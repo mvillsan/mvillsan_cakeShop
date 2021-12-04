@@ -129,16 +129,15 @@ public class UpdateProducts extends AppCompatActivity {
             }
 
             Product product;
-            //product = db.getProduct(Integer.parseInt(productID));
-            product = db.getProduct(1);
+            product = db.getProduct(Integer.parseInt(productID));
             //Check whether the product name, price and quantity edit text are not empty.
             if (product != null) {
-                Toast.makeText(getApplicationContext(),"Product ID EXISTS.", Toast.LENGTH_SHORT).show();
-                double productPrice = product.getPrice();
-                int productQuantity = product.getQuantity();
-                prodName.setText(product.getName());
-                prodPrice.setText(" " +productPrice);
-                prodQuant.setText(" " + productQuantity);
+                db.updateProduct(product);
+                Toast.makeText(getApplicationContext(), product.getId() + "Product Succesfully UPDATED !", Toast.LENGTH_SHORT).show();
+                prodID.setText("");
+                prodName.setText("");
+                prodPrice.setText("");
+                prodQuant.setText("");
             } else {
                 Toast.makeText(getApplicationContext(), "Product ID DOES NOT EXISTS.", Toast.LENGTH_SHORT).show();
                 prodID.setText("");
@@ -146,13 +145,6 @@ public class UpdateProducts extends AppCompatActivity {
                 prodPrice.setText("");
                 prodQuant.setText("");
             }
-
-            db.updateProduct(product);
-            Toast.makeText(getApplicationContext(), product.getId() + "Product Succesfully UPDATED !", Toast.LENGTH_SHORT).show();
-                prodID.setText("");
-                prodName.setText("");
-                prodPrice.setText("");
-                prodQuant.setText("");
         }
     }
 }

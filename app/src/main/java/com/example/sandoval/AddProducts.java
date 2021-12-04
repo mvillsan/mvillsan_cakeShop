@@ -57,6 +57,7 @@ public class AddProducts extends AppCompatActivity {
             String productName = prodName.getText().toString();
             String productPrice = prodPrice.getText().toString();
             String productQuantity = prodQuantity.getText().toString();
+            Double priceProd = Double.parseDouble(productPrice);
 
             if(productName.isEmpty() && productPrice.isEmpty() && productQuantity.isEmpty()){
                 Toast.makeText(getApplicationContext(), "PLEASE INPUT ALL FIELDS!", Toast.LENGTH_SHORT).show();
@@ -77,7 +78,7 @@ public class AddProducts extends AppCompatActivity {
             } else{
                 Product product = new Product();
                 product.setName(prodName.getText().toString());
-                product.setPrice(Double.parseDouble(prodPrice.getText().toString()));
+                product.setPrice(priceProd);
                 product.setQuantity(Integer.parseInt(prodQuantity.getText().toString()));
 
                 DatabaseHandler db = new DatabaseHandler(AddProducts.this);

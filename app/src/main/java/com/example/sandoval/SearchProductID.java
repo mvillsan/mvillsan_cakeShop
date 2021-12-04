@@ -90,8 +90,8 @@ public class SearchProductID extends AppCompatActivity {
                 double productPrice = product.getPrice();
                 int productQuantity = product.getQuantity();
                 prodName.setText(product.getName());
-                prodPrice.setText(" " +productPrice);
-                prodQuantity.setText(" " + productQuantity);
+                prodPrice.setText(productPrice + "");
+                prodQuantity.setText(productQuantity + "");
             } else {
                 Toast.makeText(getApplicationContext(),"Product ID DOES NOT EXISTS.", Toast.LENGTH_SHORT).show();
                 prodID.setText("");

@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.sandoval.data.DatabaseHandler;
@@ -17,7 +16,7 @@ import com.example.sandoval.model.Product;
 
 import java.util.List;
 
-public class UpdateProducts extends AppCompatActivity {
+public class UpdateSweets extends AppCompatActivity {
 
     ImageButton homeBtn;
     Button searchProd, cmdUpdateBtn;
@@ -26,7 +25,7 @@ public class UpdateProducts extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_update_products);
+        setContentView(R.layout.activity_update_sweets);
 
         refs();
 
@@ -63,7 +62,7 @@ public class UpdateProducts extends AppCompatActivity {
     }
 
     public void home(){
-        Intent intent = new Intent(getApplicationContext(), HomeProducts.class);
+        Intent intent = new Intent(getApplicationContext(), HomeCakeShop.class);
         startActivity(intent);
     }
 
@@ -78,7 +77,7 @@ public class UpdateProducts extends AppCompatActivity {
             prodQuant.setText("");
         }else{
             //Getting product items from the database
-            DatabaseHandler db = new DatabaseHandler(UpdateProducts.this);
+            DatabaseHandler db = new DatabaseHandler(UpdateSweets.this);
 
             db.getAllProducts();
 
@@ -128,7 +127,7 @@ public class UpdateProducts extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Search Product ID First!", Toast.LENGTH_SHORT).show();
             } else {
                 //Getting product items from the database
-                DatabaseHandler db = new DatabaseHandler(UpdateProducts.this);
+                DatabaseHandler db = new DatabaseHandler(UpdateSweets.this);
 
                 db.getAllProducts();
 
@@ -142,7 +141,7 @@ public class UpdateProducts extends AppCompatActivity {
                 product = db.getProduct(Integer.parseInt(productID));
                 if (product != null) {
                     product.setName(prodName.getText().toString());
-                    product.setPrice(Double.parseDouble(prodPrice.getText().toString()));
+                    product.setPrice(Integer.parseInt(prodPrice.getText().toString()));
                     product.setQuantity(Integer.parseInt(prodQuant.getText().toString()));
                     db.updateProduct(product);
                     Toast.makeText(getApplicationContext(), "Product # " + product.getId() + " Succesfully UPDATED !", Toast.LENGTH_SHORT).show();

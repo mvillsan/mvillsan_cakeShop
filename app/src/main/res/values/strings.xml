@@ -11,10 +11,13 @@
     <string name="title_updatebtn">Update a Sweet Goody</string>
     <string name="title_deletebtn">Delete a Sweet Goody</string>
     <string name="title_credits">© Sandoval_M 2021</string>
-    <string name="title_enterProdName">Enter Product Name</string>
+    <string name="title_enterProdName">Enter Name</string>
     <string name="title_enterProdPrice">Enter Price</string>
     <string name="title_enterProdQuantity">Enter Quantity</string>
     <string name="title_enterProdID">Enter Product ID</string>
+    <string name="title_enterDesc">Enter Description</string>
+    <string name="title_flavor">Enter Flavor</string>
+    <string name="title_theme">Enter Theme</string>
     <string name="title_searchProd">Search Product</string>
     <string name="title_ProdName">Product Name</string>
     <string name="title_ProdPrice">Product Price</string>
@@ -25,4 +28,12 @@
     <string name="title_listofProds">List of Products</string>
     <string name="title_update">Update</string>
     <string name="title_delete">Delete</string>
+    <string name="req_nameSweet">Name is REQUIRED</string>
+    <string name="req_descSweet">Description is REQUIRED</string>
+    <string name="req_flavorSweet">Flavor is REQUIRED</string>
+    <string name="req_priceSweet">Price is REQUIRED</string>
+    <string name="defaultTheme">Plain</string>
+    <string name="req_defaultTheme">Default Theme will be Placed</string>
+    <string name="req_defaultQuan">Default Quantity will be Placed</string>
+    <string name="defaultQuan">0 </string>
 </resources>

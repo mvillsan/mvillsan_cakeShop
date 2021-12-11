@@ -12,13 +12,17 @@
         <entry key="..\:/mini_mart/app/src/main/res/font/josefin_sans.xml" value="0.30833333333333335" />
         <entry key="..\:/mini_mart/app/src/main/res/layout/activity_add_prod_management.xml" value="0.278125" />
         <entry key="..\:/mini_mart/app/src/main/res/layout/activity_add_products.xml" value="0.33" />
+        <entry key="..\:/mini_mart/app/src/main/res/layout/activity_add_sweets.xml" value="0.33" />
         <entry key="..\:/mini_mart/app/src/main/res/layout/activity_delete_products.xml" value="0.5" />
+        <entry key="..\:/mini_mart/app/src/main/res/layout/activity_delete_sweets.xml" value="0.278125" />
+        <entry key="..\:/mini_mart/app/src/main/res/layout/activity_home_cakeshop.xml" value="0.278125" />
         <entry key="..\:/mini_mart/app/src/main/res/layout/activity_home_products.xml" value="0.33" />
         <entry key="..\:/mini_mart/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/mini_mart/app/src/main/res/layout/activity_search_product_id.xml" value="0.33" />
         <entry key="..\:/mini_mart/app/src/main/res/layout/activity_splash_screen.xml" value="0.22" />
         <entry key="..\:/mini_mart/app/src/main/res/layout/activity_update_products.xml" value="0.33" />
         <entry key="..\:/mini_mart/app/src/main/res/layout/activity_view_all_products.xml" value="0.33" />
+        <entry key="..\:/mini_mart/app/src/main/res/layout/activity_view_all_sweets.xml" value="0.278125" />
         <entry key="..\:/mini_mart/app/src/main/res/layout/content_add_products.xml" value="0.278125" />
       </map>
     </option>

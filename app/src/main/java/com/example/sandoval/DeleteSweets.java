@@ -17,7 +17,7 @@ import com.example.sandoval.model.Product;
 
 import java.util.List;
 
-public class DeleteProducts extends AppCompatActivity {
+public class DeleteSweets extends AppCompatActivity {
 
     ImageButton homeBtn;
     Button searchProd, cmdDeleteBtn;
@@ -27,7 +27,7 @@ public class DeleteProducts extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_delete_products);
+        setContentView(R.layout.activity_delete_sweets);
 
         refs();
 
@@ -64,7 +64,7 @@ public class DeleteProducts extends AppCompatActivity {
     }
 
     public void home(){
-        Intent intent = new Intent(getApplicationContext(), HomeProducts.class);
+        Intent intent = new Intent(getApplicationContext(), HomeCakeShop.class);
         startActivity(intent);
     }
 
@@ -79,7 +79,7 @@ public class DeleteProducts extends AppCompatActivity {
             prodQuant.setText("");
         }else{
             //Getting product items from the database
-            DatabaseHandler db = new DatabaseHandler(DeleteProducts.this);
+            DatabaseHandler db = new DatabaseHandler(DeleteSweets.this);
 
             db.getAllProducts();
 
@@ -95,7 +95,7 @@ public class DeleteProducts extends AppCompatActivity {
             //Check whether the Product ID exists
             if(product != null) {
                 Toast.makeText(getApplicationContext(),"Product ID EXISTS.", Toast.LENGTH_SHORT).show();
-                double productPrice = product.getPrice();
+                int productPrice = (int) product.getPrice();
                 int productQuantity = product.getQuantity();
                 prodName.setText(product.getName());
                 prodPrice.setText(productPrice + "");
@@ -129,7 +129,7 @@ public class DeleteProducts extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Search Product ID First!", Toast.LENGTH_SHORT).show();
             }else{
                 //Getting product items from the database
-                DatabaseHandler db = new DatabaseHandler(DeleteProducts.this);
+                DatabaseHandler db = new DatabaseHandler(DeleteSweets.this);
 
                 db.getAllProducts();
 

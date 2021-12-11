@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg2"
-    tools:context=".HomeProducts">
+    tools:context=".HomeCakeShop">
 
     <TextView
         android:id="@+id/rec_transparent8"

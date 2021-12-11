@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mini_mart">
         <activity
-            android:name=".DeleteProducts"
+            android:name=".DeleteSweets"
             android:exported="true" />
         <activity
-            android:name=".UpdateProducts"
+            android:name=".UpdateSweets"
             android:exported="true" />
         <activity
             android:name=".SplashScreen"
@@ -25,16 +25,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ViewAllProducts"
+            android:name=".ViewAllSweets"
             android:exported="true" />
         <activity
-            android:name=".SearchProductID"
+            android:name=".SearchSweetsID"
             android:exported="true" />
         <activity
-            android:name=".AddProducts"
+            android:name=".AddSweets"
             android:exported="true" />
         <activity
-            android:name=".HomeProducts"
+            android:name=".HomeCakeShop"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

@@ -41,7 +41,7 @@
         android:fontFamily="@font/regbrush"
         android:text="@string/title_welcome"
         android:textAlignment="center"
-        android:textColor="@color/goldorange"
+        android:textColor="@color/darkorange"
         android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,29 +63,17 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/pastel_peach" />
 
-    <ImageButton
-        android:id="@+id/homeBtn"
-        android:layout_width="34dp"
-        android:layout_height="35dp"
-        android:contentDescription="@string/title_homelogo"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.042"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/home_icon" />
-
     <TextView
         android:id="@+id/mmTxt"
-        android:layout_width="135dp"
-        android:layout_height="43dp"
+        android:layout_width="276dp"
+        android:layout_height="35dp"
         android:fontFamily="@font/dalgona"
         android:shadowColor="@color/darkred"
         android:shadowDx="5"
         android:shadowDy="-5"
         android:shadowRadius="5"
         android:text="@string/title_minimart"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
         android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView6"
@@ -93,7 +81,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/homeBtn"
         app:layout_constraintTop_toTopOf="@+id/imageView6"
-        app:layout_constraintVertical_bias="0.516" />
+        app:layout_constraintVertical_bias="0.36" />
 
     <TextView
         android:id="@+id/copyrightTxt"
@@ -119,5 +107,17 @@
         app:layout_constraintTop_toBottomOf="@+id/txtViewWelcome"
         app:layout_constraintVertical_bias="0.052"
         app:srcCompat="@drawable/logo" />
+
+    <ImageView
+        android:id="@+id/homeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.444"
+        app:srcCompat="@drawable/ic_home" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -49,7 +49,7 @@
         android:fontFamily="@font/theboldfont"
         android:text="@string/title_viewAllbtn"
         android:textAlignment="center"
-        android:textColor="@color/darkred"
+        android:textColor="@color/darkorange"
         app:layout_constraintBottom_toBottomOf="@+id/rec_transparent6"
         app:layout_constraintEnd_toEndOf="@+id/rec_transparent6"
         app:layout_constraintStart_toStartOf="@+id/rec_transparent6"
@@ -122,8 +122,8 @@
 
     <TextView
         android:id="@+id/mmTxt2"
-        android:layout_width="125dp"
-        android:layout_height="37dp"
+        android:layout_width="243dp"
+        android:layout_height="41dp"
         android:fontFamily="@font/dalgona"
         android:shadowColor="@color/darkred"
         android:shadowDx="5"
@@ -138,19 +138,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/homeBtn2"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.516" />
-
-    <ImageButton
-        android:id="@+id/homeBtn2"
-        android:layout_width="34dp"
-        android:layout_height="35dp"
-        android:contentDescription="@string/title_homelogo"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.042"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/home_icon" />
+        app:layout_constraintVertical_bias="0.526" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -184,7 +172,7 @@
         android:fontFamily="@font/theboldfont"
         android:text="@string/title_deletebtn"
         android:textAlignment="center"
-        android:textColor="@color/darkred"
+        android:textColor="@color/darkorange"
         app:layout_constraintBottom_toBottomOf="@+id/rec_transparent8"
         app:layout_constraintEnd_toEndOf="@+id/rec_transparent8"
         app:layout_constraintHorizontal_bias="0.473"
@@ -199,7 +187,7 @@
         android:fontFamily="@font/theboldfont"
         android:text="@string/title_searchProdIDbtn"
         android:textAlignment="center"
-        android:textColor="@color/darkred"
+        android:textColor="@color/darkorange"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/rec_transparent5"
         app:layout_constraintEnd_toEndOf="@+id/rec_transparent5"
@@ -223,12 +211,12 @@
 
     <TextView
         android:id="@+id/addTxt"
-        android:layout_width="104dp"
-        android:layout_height="16dp"
+        android:layout_width="105dp"
+        android:layout_height="28dp"
         android:fontFamily="@font/theboldfont"
         android:text="@string/title_addbtn"
         android:textAlignment="center"
-        android:textColor="@color/darkred"
+        android:textColor="@color/darkorange"
         app:layout_constraintBottom_toBottomOf="@+id/rec_transparent4"
         app:layout_constraintEnd_toEndOf="@+id/rec_transparent4"
         app:layout_constraintHorizontal_bias="0.4"
@@ -238,8 +226,8 @@
 
     <ImageButton
         android:id="@+id/addBtn"
-        android:layout_width="75dp"
-        android:layout_height="76dp"
+        android:layout_width="70dp"
+        android:layout_height="65dp"
         android:background="@color/lightpink"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/rec_transparent4"
@@ -251,8 +239,8 @@
 
     <ImageButton
         android:id="@+id/updateBtn"
-        android:layout_width="79dp"
-        android:layout_height="72dp"
+        android:layout_width="76dp"
+        android:layout_height="65dp"
         android:background="@color/lightpink"
         app:layout_constraintBottom_toBottomOf="@+id/rec_transparent7"
         app:layout_constraintEnd_toEndOf="@+id/rec_transparent7"
@@ -269,12 +257,23 @@
         android:fontFamily="@font/theboldfont"
         android:text="@string/title_updatebtn"
         android:textAlignment="center"
-        android:textColor="@color/darkred"
+        android:textColor="@color/darkorange"
         app:layout_constraintBottom_toBottomOf="@+id/rec_transparent7"
         app:layout_constraintEnd_toEndOf="@+id/rec_transparent7"
         app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="@+id/rec_transparent7"
         app:layout_constraintTop_toBottomOf="@+id/updateBtn"
         app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/homeBtn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/imageView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_home" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,7 +18,7 @@ import com.example.sandoval.model.Product;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ViewAllProducts extends AppCompatActivity {
+public class ViewAllSweets extends AppCompatActivity {
 
     ImageButton homeBtn;
     ListView viewAllProducts;
@@ -29,7 +29,7 @@ public class ViewAllProducts extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_all_products);
+        setContentView(R.layout.activity_view_all_sweets);
 
         refs();
 
@@ -41,7 +41,7 @@ public class ViewAllProducts extends AppCompatActivity {
         });
 
         productArrayList = new ArrayList<>();
-        DatabaseHandler db = new DatabaseHandler(ViewAllProducts.this);
+        DatabaseHandler db = new DatabaseHandler(ViewAllSweets.this);
         db.getAllProducts();
         List<Product> productList =  db.getAllProducts();
 
@@ -75,7 +75,7 @@ public class ViewAllProducts extends AppCompatActivity {
         viewAllProducts = findViewById(R.id.listViewProds);
     }
     public void home(){
-        Intent intent = new Intent(getApplicationContext(), HomeProducts.class);
+        Intent intent = new Intent(getApplicationContext(), HomeCakeShop.class);
         startActivity(intent);
     }
 }

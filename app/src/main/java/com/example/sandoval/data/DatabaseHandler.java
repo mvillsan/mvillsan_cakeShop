@@ -6,9 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-import android.widget.Toast;
-
-import androidx.annotation.Nullable;
 import com.example.sandoval.R;
 import com.example.sandoval.model.Product;
 import com.example.sandoval.util.Util;
@@ -25,13 +22,16 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         @Override
         public void onCreate(SQLiteDatabase db) {
 
-            String CREATE_PRODUCT_TABLE = "CREATE TABLE " + Util.TABLE_NAME + "("
+            String CREATE_CAKESHOP_TABLE = "CREATE TABLE " + Util.TABLE_NAME + "("
                     + Util.KEY_ID + " INTEGER PRIMARY KEY,"
                     + Util.KEY_NAME + " TEXT,"
-                    + Util.KEY_PRICE + " DOUBLE,"
+                    + Util.KEY_DESCRIPTION + " TEXT,"
+                    + Util.KEY_FLAVOR + " TEXT,"
+                    + Util.KEY_THEME + " TEXT,"
+                    + Util.KEY_PRICE + " INTEGER,"
                     + Util.KEY_QUANTITY + " INTEGER" + ")";
 
-            db.execSQL(CREATE_PRODUCT_TABLE);
+            db.execSQL(CREATE_CAKESHOP_TABLE);
         }
 
         @Override
@@ -47,13 +47,15 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             SQLiteDatabase db = this.getWritableDatabase();
 
             ContentValues values = new ContentValues();
-
             values.put(Util.KEY_NAME,product.getName());
+            values.put(Util.KEY_DESCRIPTION,product.getDesc());
+            values.put(Util.KEY_FLAVOR,product.getFlavor());
+            values.put(Util.KEY_THEME,product.getTheme());
             values.put(Util.KEY_PRICE, product.getPrice());
             values.put(Util.KEY_QUANTITY, product.getQuantity());
 
             db.insert(Util.TABLE_NAME, null, values);
-            Log.d("db","Add Product: " + "Successful");
+            Log.d("db","Add Sweets: " + "Successful");
 
             db.close();
             return true;
@@ -64,7 +66,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             SQLiteDatabase db = this.getReadableDatabase();
 
             Cursor cursor = db.query(Util.TABLE_NAME,
-                    new String[] {Util.KEY_ID, Util.KEY_NAME, Util.KEY_PRICE, Util.KEY_QUANTITY},
+                    new String[] {Util.KEY_ID, Util.KEY_NAME, Util.KEY_DESCRIPTION, Util.KEY_FLAVOR, Util.KEY_THEME, Util.KEY_PRICE, Util.KEY_QUANTITY},
                     Util.KEY_ID + "=?", new String[]{String.valueOf(id)},
                     null, null, null, null);
 
@@ -77,8 +79,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 Product product = new Product();
                 product.setId(cursor.getInt(0));
                 product.setName(cursor.getString(1));
-                product.setPrice(cursor.getLong(2));
-                product.setQuantity(cursor.getInt(3));
+                product.setDesc(cursor.getString(2));
+                product.setFlavor(cursor.getString(3));
+                product.setTheme(cursor.getString(4));
+                product.setPrice(cursor.getInt(5));
+                product.setQuantity(cursor.getInt(6));
                 return product;
             } else{
                 return null;
@@ -101,8 +106,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                     Product product = new Product();
                     product.setId(cursor.getInt(0));
                     product.setName(cursor.getString(1));
-                    product.setPrice(cursor.getLong(2));
-                    product.setQuantity(cursor.getInt(3));
+                    product.setDesc(cursor.getString(2));
+                    product.setFlavor(cursor.getString(3));
+                    product.setTheme(cursor.getString(4));
+                    product.setPrice(cursor.getInt(5));
+                    product.setQuantity(cursor.getInt(6));
 
                     //add product object to list
                     productList.add(product);
@@ -116,10 +124,13 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         public int updateProduct(Product product) {
             SQLiteDatabase db = this.getWritableDatabase();
 
-                    ContentValues values = new ContentValues();
-            values.put(Util.KEY_NAME, product.getName());
-            values.put(Util.KEY_QUANTITY, product.getQuantity());
+            ContentValues values = new ContentValues();
+            values.put(Util.KEY_NAME,product.getName());
+            values.put(Util.KEY_DESCRIPTION,product.getDesc());
+            values.put(Util.KEY_FLAVOR,product.getFlavor());
+            values.put(Util.KEY_THEME,product.getTheme());
             values.put(Util.KEY_PRICE, product.getPrice());
+            values.put(Util.KEY_QUANTITY, product.getQuantity());
 
             //update the row
 

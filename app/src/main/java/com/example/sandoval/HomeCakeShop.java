@@ -8,16 +8,18 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
-public class HomeProducts extends AppCompatActivity {
+public class HomeCakeShop extends AppCompatActivity {
 
+    //Declaration of Variables
     ImageButton addProds,searchByIdProds, viewAllProds,updateProds, deleteProds;
     ImageView homeBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_products);
+        setContentView(R.layout.activity_home_cakeshop);
 
+        //References
         refs();
 
         homeBtn.setOnClickListener(new View.OnClickListener() {
@@ -30,7 +32,7 @@ public class HomeProducts extends AppCompatActivity {
         addProds.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                addProd();
+                addSweets();
             }
         });
 
@@ -44,25 +46,26 @@ public class HomeProducts extends AppCompatActivity {
         viewAllProds.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                viewAllProd();
+                viewAllSweets();
             }
         });
 
         updateProds.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                updateProd();
+                updateSweets();
             }
         });
 
         deleteProds.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                deleteProd();
+                deleteSweets();
             }
         });
     }
 
+    //References
     public void refs(){
         homeBtn = findViewById(R.id.homeBtn2);
         addProds = findViewById(R.id.addBtn);
@@ -71,33 +74,40 @@ public class HomeProducts extends AppCompatActivity {
         updateProds = findViewById(R.id.updateBtn);
         deleteProds = findViewById(R.id.deleteBtn);
     }
+
+    //Return to Home Screen
     public void home(){
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
     }
 
-    public void addProd(){
-        Intent intent = new Intent(getApplicationContext(), AddProducts.class);
+    //Enter Add Sweets Screen
+    public void addSweets(){
+        Intent intent = new Intent(getApplicationContext(), AddSweets.class);
         startActivity(intent);
     }
 
+    //Enter Search Sweets Screen
     public void searchID(){
-        Intent intent = new Intent(getApplicationContext(), SearchProductID.class);
+        Intent intent = new Intent(getApplicationContext(), SearchSweetsID.class);
         startActivity(intent);
     }
 
-    public void viewAllProd(){
-        Intent intent = new Intent(getApplicationContext(), ViewAllProducts.class);
+    //Enter View All Sweets Screen
+    public void viewAllSweets(){
+        Intent intent = new Intent(getApplicationContext(), ViewAllSweets.class);
         startActivity(intent);
     }
 
-    public void updateProd(){
-        Intent intent = new Intent(getApplicationContext(), UpdateProducts.class);
+    //Enter Update Sweets Screen
+    public void updateSweets(){
+        Intent intent = new Intent(getApplicationContext(), UpdateSweets.class);
         startActivity(intent);
     }
 
-    public void deleteProd(){
-        Intent intent = new Intent(getApplicationContext(), DeleteProducts.class);
+    //Enter Delete Sweets Screen
+    public void deleteSweets(){
+        Intent intent = new Intent(getApplicationContext(), DeleteSweets.class);
         startActivity(intent);
     }
 }

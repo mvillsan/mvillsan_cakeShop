@@ -10,6 +10,7 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
+    //Declaration of Variables
     Button enterBtn;
     ImageView homeBtn;
 
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //References
         refs();
 
         homeBtn.setOnClickListener(new View.OnClickListener() {
@@ -30,23 +32,26 @@ public class MainActivity extends AppCompatActivity {
         enterBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                enterHomeProducts();
+                enterHomeCakeShop();
             }
         });
     }
 
+    //References
     public void refs(){
         homeBtn = findViewById(R.id.homeBtn);
         enterBtn = findViewById(R.id.enterBtn);
     }
 
+    //Return to Home Screen
     public void home(){
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
     }
 
-    public void enterHomeProducts(){
-        Intent intent = new Intent(getApplicationContext(), HomeProducts.class);
+    //Enter Home CakeShop Menu
+    public void enterHomeCakeShop(){
+        Intent intent = new Intent(getApplicationContext(), HomeCakeShop.class);
         startActivity(intent);
     }
 }

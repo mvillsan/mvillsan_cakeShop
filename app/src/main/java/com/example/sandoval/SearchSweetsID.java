@@ -17,7 +17,7 @@ import com.example.sandoval.model.Product;
 
 import java.util.List;
 
-public class SearchProductID extends AppCompatActivity {
+public class SearchSweetsID extends AppCompatActivity {
 
     ImageButton homeBtn;
     Button cmdSearchByID;
@@ -27,7 +27,7 @@ public class SearchProductID extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search_product_id);
+        setContentView(R.layout.activity_search_sweets_id);
 
         //Method to get the id fields used in xml layout files
         refs();
@@ -58,7 +58,7 @@ public class SearchProductID extends AppCompatActivity {
     }
 
     public void home(){
-        Intent intent = new Intent(this, HomeProducts.class);
+        Intent intent = new Intent(this, HomeCakeShop.class);
         startActivity(intent);
     }
 
@@ -72,14 +72,14 @@ public class SearchProductID extends AppCompatActivity {
             prodQuantity.setText("");
         }else{
             //Getting product items from the database
-            DatabaseHandler db = new DatabaseHandler(SearchProductID.this);
+            DatabaseHandler db = new DatabaseHandler(SearchSweetsID.this);
 
             db.getAllProducts();
 
             List<Product> productList =  db.getAllProducts();
 
             for(Product product: productList) {
-                Log.d("SearchProductID", "On Create: " + product.getName() + ", " + product.getId());
+                Log.d("SearchSweetsID", "On Create: " + product.getName() + ", " + product.getId());
             }
 
             Product product;

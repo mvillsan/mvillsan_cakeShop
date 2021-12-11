@@ -6,10 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 public class HomeProducts extends AppCompatActivity {
 
-    ImageButton homeBtn,addProds,searchByIdProds, viewAllProds,updateProds, deleteProds;
+    ImageButton addProds,searchByIdProds, viewAllProds,updateProds, deleteProds;
+    ImageView homeBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

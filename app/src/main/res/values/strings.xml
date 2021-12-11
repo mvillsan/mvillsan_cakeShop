@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">mini_mart</string>
+    <string name="app_name">cake_shop</string>
     <string name="drop_table">DROP TABLE IF EXIST</string>
     <string name="title_activity_add_products">addProducts</string>
     <string name="title_welcome">Welcome to</string>

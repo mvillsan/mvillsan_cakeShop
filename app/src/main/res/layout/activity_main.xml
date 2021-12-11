@@ -19,7 +19,7 @@
         android:id="@+id/enterBtn"
         android:layout_width="109dp"
         android:layout_height="62dp"
-        android:background="@color/darkorange"
+        android:background="@color/dark_pink"
         android:drawableRight="@drawable/enter_icon"
         android:fontFamily="@font/lemon"
         android:text="@string/title_enterBtn"
@@ -28,9 +28,10 @@
         android:textColor="@color/lightgreen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.275" />
+        app:layout_constraintVertical_bias="0.185" />
 
     <TextView
         android:id="@+id/txtViewWelcome"
@@ -109,15 +110,14 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="286dp"
-        android:layout_height="216dp"
+        android:layout_width="351dp"
+        android:layout_height="296dp"
         android:contentDescription="@string/title_mmlogo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtViewWelcome"
-        app:layout_constraintVertical_bias="0.283"
+        app:layout_constraintVertical_bias="0.052"
         app:srcCompat="@drawable/logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

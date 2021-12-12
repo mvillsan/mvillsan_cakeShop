@@ -100,14 +100,18 @@ public class AddSweets extends AppCompatActivity {
             nameLayout.setError(getString(R.string.req_nameSweet));
             isValid = false;
         } else {
-            Boolean isValidName = name.matches("[A-Za-z][A-Za-z ]*+");
-            if (!isValidName) {
-                nameLayout.setError("Invalid Sweet's Name, ex: Choco Cake");
-                requestFocus(sweetsName);
-                return false;
-            } else {
-                nameLayout.setErrorEnabled(false);
-                nameLayout.setError("");
+            if(sweetsName.getText().toString().length() < 3){
+                nameLayout.setError("Sweet's Name must have 3 letters or more");
+            }else{
+                Boolean isValidName = name.matches("[A-Za-z][A-Za-z ]*+");
+                if (!isValidName) {
+                    nameLayout.setError("Invalid Sweet's Name, ex: Choco Cake");
+                    requestFocus(sweetsName);
+                    return false;
+                } else {
+                    nameLayout.setErrorEnabled(false);
+                    nameLayout.setError("");
+                }
             }
         }
 
@@ -116,8 +120,12 @@ public class AddSweets extends AppCompatActivity {
             descLayout.setError(getString(R.string.req_descSweet));
             isValid = false;
         } else {
-            descLayout.setErrorEnabled(false);
-            descLayout.setError("");
+            if(sweetsDesc.getText().toString().length() < 5){
+                descLayout.setError("Sweet's Description must have 5 letters or more");
+            }else{
+                descLayout.setErrorEnabled(false);
+                descLayout.setError("");
+            }
         }
 
         //Sweets Flavor Validations
@@ -125,14 +133,18 @@ public class AddSweets extends AppCompatActivity {
             flavorLayout.setError(getString(R.string.req_flavorSweet));
             isValid = false;
         } else {
-            Boolean isValidFlavor = flavor.matches("[A-Za-z][A-Za-z ]*+");
-            if (!isValidFlavor) {
-                flavorLayout.setError("Invalid Sweet's Flavor, ex: Chocolate");
-                requestFocus(sweetsFlavor);
-                return false;
-            } else {
-                flavorLayout.setErrorEnabled(false);
-                flavorLayout.setError("");
+            if(sweetsFlavor.getText().toString().length() < 4){
+                flavorLayout.setError("Sweet's Flavor must have 4 letters or more");
+            }else{
+                Boolean isValidFlavor = flavor.matches("[A-Za-z][A-Za-z ]*+");
+                if (!isValidFlavor) {
+                    flavorLayout.setError("Invalid Sweet's Flavor, ex: Chocolate");
+                    requestFocus(sweetsFlavor);
+                    return false;
+                } else {
+                    flavorLayout.setErrorEnabled(false);
+                    flavorLayout.setError("");
+                }
             }
         }
 
@@ -141,14 +153,18 @@ public class AddSweets extends AppCompatActivity {
             sweetsTheme.setText(getString(R.string.defaultTheme));
             isValid = false;
         } else {
-            Boolean isValidTheme = theme.matches("[A-Za-z][A-Za-z ]*+");
-            if (!isValidTheme) {
-                themeLayout.setError("Invalid Sweet's Theme, ex: Birthday Theme");
-                requestFocus(sweetsTheme);
-                return false;
-            } else {
-                themeLayout.setErrorEnabled(false);
-                themeLayout.setError("");
+            if(sweetsTheme.getText().toString().length() < 5){
+                themeLayout.setError("Sweet's Theme must have 5 letters or more");
+            }else{
+                Boolean isValidTheme = theme.matches("[A-Za-z][A-Za-z ]*+");
+                if (!isValidTheme) {
+                    themeLayout.setError("Invalid Sweet's Theme, ex: Birthday Theme");
+                    requestFocus(sweetsTheme);
+                    return false;
+                } else {
+                    themeLayout.setErrorEnabled(false);
+                    themeLayout.setError("");
+                }
             }
         }
 
@@ -223,7 +239,7 @@ public class AddSweets extends AppCompatActivity {
         return true;
     }
 
-    //Setting FOCUS
+    //Setting FOCUS for edittexts for user to input
     private void requestFocus(View view) {
         if (view.requestFocus()) {
             getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
@@ -235,15 +251,19 @@ public class AddSweets extends AppCompatActivity {
         if (sweetsName.getText().toString().trim().isEmpty()) {
             nameLayout.setError(getString(R.string.req_nameSweet));
         } else {
-            String name = sweetsName.getText().toString();
-            Boolean  isValid = name.matches("[A-Za-z][A-Za-z ]*+");
-            if (!isValid) {
-                nameLayout.setError("Invalid Sweet's Name, ex: Choco Cake");
-                requestFocus(sweetsName);
-                return false;
-            } else {
-                nameLayout.setErrorEnabled(false);
-                nameLayout.setError("");
+            if(sweetsName.getText().toString().length() < 3){
+                nameLayout.setError("Sweet's Name must have 3 letters or more");
+            }else{
+                String name = sweetsName.getText().toString();
+                Boolean  isValid = name.matches("[A-Za-z][A-Za-z ]*+");
+                if (!isValid) {
+                    nameLayout.setError("Invalid Sweet's Name, ex: Choco Cake");
+                    requestFocus(sweetsName);
+                    return false;
+                } else {
+                    nameLayout.setErrorEnabled(false);
+                    nameLayout.setError("");
+                }
             }
         }
         return true;
@@ -254,8 +274,13 @@ public class AddSweets extends AppCompatActivity {
         if (sweetsDesc.getText().toString().trim().isEmpty()) {
             descLayout.setError(getString(R.string.req_descSweet));
         } else {
-            descLayout.setErrorEnabled(false);
-            descLayout.setError("");
+            if(sweetsDesc.getText().toString().length() < 5){
+                descLayout.setError("Sweet's Description must have 5 letters or more");
+            }else{
+                descLayout.setErrorEnabled(false);
+                descLayout.setError("");
+            }
+
         }
         return true;
     }
@@ -265,15 +290,19 @@ public class AddSweets extends AppCompatActivity {
         if (sweetsFlavor.getText().toString().trim().isEmpty()) {
             flavorLayout.setError(getString(R.string.req_flavorSweet));
         } else {
-            String flavor = sweetsFlavor.getText().toString();
-            Boolean  isValid = flavor.matches("[A-Za-z][A-Za-z ]*+");
-            if (!isValid) {
-                flavorLayout.setError("Invalid Sweet's Flavor, ex: Chocolate");
-                requestFocus(sweetsFlavor);
-                return false;
-            } else {
-                flavorLayout.setErrorEnabled(false);
-                flavorLayout.setError("");
+            if(sweetsFlavor.getText().toString().length() < 4){
+                flavorLayout.setError("Sweet's Flavor must have 4 letters or more");
+            }else{
+                String flavor = sweetsFlavor.getText().toString();
+                Boolean  isValid = flavor.matches("[A-Za-z][A-Za-z ]*+");
+                if (!isValid) {
+                    flavorLayout.setError("Invalid Sweet's Flavor, ex: Chocolate");
+                    requestFocus(sweetsFlavor);
+                    return false;
+                } else {
+                    flavorLayout.setErrorEnabled(false);
+                    flavorLayout.setError("");
+                }
             }
         }
         return true;
@@ -284,15 +313,19 @@ public class AddSweets extends AppCompatActivity {
         if (sweetsTheme.getText().toString().trim().isEmpty()) {
             sweetsTheme.setHint(getString(R.string.req_defaultTheme));
         } else {
-            String theme = sweetsTheme.getText().toString();
-            Boolean  isValid = theme.matches("[A-Za-z][A-Za-z ]*+");
-            if (!isValid) {
-                themeLayout.setError("Invalid Sweet's Theme, ex: Birthday Theme");
-                requestFocus(sweetsTheme);
-                return false;
-            } else {
-                themeLayout.setErrorEnabled(false);
-                themeLayout.setError("");
+            if(sweetsTheme.getText().toString().length() < 5){
+                themeLayout.setError("Sweet's Theme must have 5 letters or more");
+            }else{
+                String theme = sweetsTheme.getText().toString();
+                Boolean  isValid = theme.matches("[A-Za-z][A-Za-z ]*+");
+                if (!isValid) {
+                    themeLayout.setError("Invalid Sweet's Theme, ex: Birthday Theme");
+                    requestFocus(sweetsTheme);
+                    return false;
+                } else {
+                    themeLayout.setErrorEnabled(false);
+                    themeLayout.setError("");
+                }
             }
         }
         return true;

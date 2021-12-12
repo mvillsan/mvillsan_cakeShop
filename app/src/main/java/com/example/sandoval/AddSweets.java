@@ -51,6 +51,14 @@ public class AddSweets extends AppCompatActivity {
                 addSweets();
             }
         });
+
+        //Validations while edittext is being changed.
+        sweetsName.addTextChangedListener(new ValidationTextWatcher(sweetsName));
+        sweetsDesc.addTextChangedListener(new ValidationTextWatcher(sweetsDesc));
+        sweetsFlavor.addTextChangedListener(new ValidationTextWatcher(sweetsFlavor));
+        sweetsTheme.addTextChangedListener(new ValidationTextWatcher(sweetsTheme));
+        sweetsPrice.addTextChangedListener(new ValidationTextWatcher(sweetsPrice));
+        sweetsQuantity.addTextChangedListener(new ValidationTextWatcher(sweetsQuantity));
     }
 
     //References
@@ -163,6 +171,8 @@ public class AddSweets extends AppCompatActivity {
         }
         //If all validations are passed, add sweets to the database
         if (isValid) {
+            boolean validNameDB = true;
+
             //Parse String to Integer type
             int price = Integer.parseInt(sPrice);
             int quantity = Integer.parseInt(sQuantity);
@@ -175,25 +185,41 @@ public class AddSweets extends AppCompatActivity {
             product.setPrice(price);
             product.setQuantity(quantity);
 
-            //Adding product to the database
+            //Connect to database
             DatabaseHandler db = new DatabaseHandler(AddSweets.this);
-            if (db.addProduct(product)) {
-                Toast.makeText(getApplicationContext(), "Successfully Added", Toast.LENGTH_SHORT).show();
 
-                List<Product> productList = db.getAllProducts();
-
-                for (Product prod : productList) {
-                    Log.d("CakeShopActivity", "On Create: " + prod.getName());
+            //Check if sweets have the same name in those stored in DB
+            List<Product> sweetCheck = db.getAllProducts();
+            for (Product sweet : sweetCheck){
+                if(product.getName().equalsIgnoreCase(sweet.getName())){
+                    Toast.makeText(getApplicationContext(), "Name Already Existed! Input Another Sweet's Name", Toast.LENGTH_SHORT).show();
+                    validNameDB = false;
                 }
             }
+
+            //Sweets Name does not exist in DB
+            if(validNameDB){
+                //Add sweets to the database
+                if (db.addProduct(product)) {
+                    Toast.makeText(getApplicationContext(), "Successfully Added", Toast.LENGTH_SHORT).show();
+
+                    List<Product> productList = db.getAllProducts();
+
+                    for (Product prod : productList) {
+                        Log.d("CakeShopActivity", "On Create: " + prod.getName());
+                    }
+                }
+                //Clear fields
+                sweetsName.setText("");
+                sweetsDesc.setText("");
+                sweetsFlavor.setText("");
+                sweetsTheme.setText("");
+                sweetsPrice.setText("");
+                sweetsQuantity.setText("");
+            }else{
+                sweetsName.setText("");
+            }
         }
-        //Clear fields
-        sweetsName.setText("");
-        sweetsDesc.setText("");
-        sweetsFlavor.setText("");
-        sweetsTheme.setText("");
-        sweetsPrice.setText("");
-        sweetsQuantity.setText("");
         return true;
     }
 
@@ -256,7 +282,7 @@ public class AddSweets extends AppCompatActivity {
     //Sweets Theme Validations
     private boolean validateSweetsTheme() {
         if (sweetsTheme.getText().toString().trim().isEmpty()) {
-            sweetsTheme.setText(getString(R.string.defaultTheme));
+            sweetsTheme.setHint(getString(R.string.req_defaultTheme));
         } else {
             String theme = sweetsTheme.getText().toString();
             Boolean  isValid = theme.matches("[A-Za-z][A-Za-z ]*+");
@@ -286,7 +312,7 @@ public class AddSweets extends AppCompatActivity {
     //Sweets Quantity Validations
     private boolean validateSweetsQuan() {
         if (sweetsQuantity.getText().toString().trim().isEmpty()) {
-            sweetsQuantity.setText(getString(R.string.defaultQuan));
+            sweetsQuantity.setHint(getString(R.string.req_defaultQuan));
         } else {
             quantityLayout.setErrorEnabled(false);
             quantityLayout.setError("");

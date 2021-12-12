@@ -19,7 +19,7 @@
         app:layout_constraintHorizontal_bias="0.415"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addSWBtn"
-        app:layout_constraintVertical_bias="0.16" />
+        app:layout_constraintVertical_bias="0.23" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -130,6 +130,9 @@
         android:id="@+id/nameASGTextInputLayout"
         android:layout_width="268dp"
         android:layout_height="80dp"
+        app:endIconMode="clear_text"
+        app:errorEnabled="true"
+        app:startIconDrawable="@drawable/ic_cake"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.314"
@@ -152,6 +155,9 @@
         android:id="@+id/flavorASGTextInputLayout"
         android:layout_width="268dp"
         android:layout_height="80dp"
+        app:endIconMode="clear_text"
+        app:errorEnabled="true"
+        app:startIconDrawable="@drawable/ic_flavor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.314"
         app:layout_constraintStart_toStartOf="parent"
@@ -170,35 +176,41 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/themeASGTextInputLayout"
-        android:layout_width="267dp"
-        android:layout_height="80dp"
+        android:layout_width="268dp"
+        android:layout_height="63dp"
+        app:endIconMode="clear_text"
+        app:errorEnabled="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.305"
+        app:layout_constraintHorizontal_bias="0.314"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/flavorASGTextInputLayout"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.0"
+        app:startIconDrawable="@drawable/ic_theme">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/themeEditTxtAS"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat"
-            android:hint="@string/title_theme"
+            android:hint="Enter theme"
             android:inputType="text"
             android:textSize="14sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/priceASGTextInputLayout"
-        android:layout_width="267dp"
-        android:layout_height="80dp"
+        android:layout_width="270dp"
+        android:layout_height="76dp"
+        app:endIconMode="clear_text"
+        app:errorEnabled="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.312"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/themeASGTextInputLayout"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.0"
+        app:startIconDrawable="@drawable/ic_price">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/priceEditTxtAS"
@@ -212,14 +224,17 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/quantityASGTextInputLayout"
-        android:layout_width="263dp"
-        android:layout_height="48dp"
+        android:layout_width="271dp"
+        android:layout_height="51dp"
+        app:endIconMode="clear_text"
+        app:errorEnabled="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.319"
+        app:layout_constraintHorizontal_bias="0.309"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/priceASGTextInputLayout"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.0"
+        app:startIconDrawable="@drawable/ic_price">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/quantityEditTxtAS"
@@ -236,6 +251,9 @@
         android:id="@+id/descASGTextInputLayout"
         android:layout_width="268dp"
         android:layout_height="80dp"
+        app:endIconMode="clear_text"
+        app:errorEnabled="true"
+        app:startIconDrawable="@drawable/ic_price"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.314"

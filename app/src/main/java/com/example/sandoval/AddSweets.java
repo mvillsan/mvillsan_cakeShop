@@ -239,7 +239,7 @@ public class AddSweets extends AppCompatActivity {
         return true;
     }
 
-    //Setting FOCUS for edittexts
+    //Setting FOCUS for edittexts for user to input
     private void requestFocus(View view) {
         if (view.requestFocus()) {
             getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
